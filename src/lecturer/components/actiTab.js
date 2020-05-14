@@ -1,20 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Button from '@material-ui/core/Button';
-import '../styles/lecturesTab.css';
-import {makeStyles, withStyles} from '@material-ui/core/styles';
+import '../styles/activitiesTab.css';
+import {fade, makeStyles, withStyles,} from '@material-ui/core/styles';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import TextField from '@material-ui/core/TextField';
 import StackedColumnChart from './stackedColumnChart';
-import TodayIcon from '@material-ui/icons/Today';
 import ScheduleIcon from '@material-ui/icons/Schedule';
 import MenuItem from '@material-ui/core/MenuItem';
 import IconButton from '@material-ui/core/IconButton';
 import AddBoxIcon from '@material-ui/icons/AddBox';
 import AssignmentIcon from '@material-ui/icons/Assignment';
+import FormControl from '@material-ui/core/FormControl';
+import InputBase from '@material-ui/core/InputBase';
+import InputLabel from '@material-ui/core/InputLabel';
 import DatePick from './datePicker';
+import Select from '@material-ui/core/Select';
 
 var response = {
   "labels": "Teaching 1,Teaching 2,Teaching 3,Teaching 4,Teaching 5,Teaching 6,Teaching 7,Teaching 8,Teaching 9,Teaching 10,Teaching 11,Teaching 12,Revision 1,Exams 1,Christmas 1,Christmas 2,Christmas 3,Christmas 4,Christmas 5,Teaching 13,Teaching 14,Teaching 15,Teaching 16,Teaching 17,Teaching 18,Teaching 19,Teaching 20,Teaching 21,Teaching 22,Teaching 23,Teaching 24,Revision 2,Exams 2",
@@ -47,6 +50,76 @@ var response = {
   "startAxis": "Teaching 1",
   "endAxis": "Exams 2"
 };
+const BootstrapInput = withStyles((theme) => ({
+  root: {
+    'label + &': {
+      marginTop: theme.spacing(3),
+    },
+  },
+  input: {
+    borderRadius: 4,
+    position: 'relative',
+    backgroundColor: theme.palette.common.white,
+    border: '1px solid #ced4da',
+    fontSize: 14,
+    width: '300px',
+    padding: '10px 12px',
+    transition: theme.transitions.create(['border-color', 'box-shadow']),
+    // Use the system font instead of the default Roboto font.
+    fontFamily: [
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
+    '&:focus': {
+      boxShadow: `${fade('#C389DB', 0.25)} 0 0 0 0.2rem`,
+      borderColor: '#4A006E',
+    },
+  },
+}))(InputBase);
+
+const BootstrapType = withStyles((theme) => ({
+  root: {
+    'label + &': {
+      marginTop: theme.spacing(3),
+    },
+  },
+  input: {
+    borderRadius: 4,
+    position: 'relative',
+    backgroundColor: theme.palette.common.white,
+    border: '1px solid #ced4da',
+    fontSize: 14,
+    width: '100px',
+    padding: '10px 12px',
+    transition: theme.transitions.create(['border-color', 'box-shadow']),
+    // Use the system font instead of the default Roboto font.
+    fontFamily: [
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
+    '&:focus': {
+      boxShadow: `${fade('#C389DB', 0.25)} 0 0 0 0.2rem`,
+      borderColor: '#4A006E',
+    },
+  },
+}))(InputBase);
+
 
 
 const BootstrapButton = withStyles({
@@ -252,7 +325,10 @@ function DetailBox() {
     },
   ];
   const [currency, setCurrency] = React.useState('EUR');
-
+  const [type, setType] = React.useState('');
+  const handleTypeChange = (event) => {
+    setType(event.target.value);
+  }
 const handleChangeClassroom = (event) => {
   setCurrency(event.target.value);
 };
@@ -281,23 +357,33 @@ const handleChangeClassroom = (event) => {
       </TabPanel>
       <TabPanel  value={value} index={1}>
         <div className = 'detailBox'>
-          <div >
-              <label For="start">Start Date</label> <label For="end" >End Date </label> <br/>
-          <DatePick id="start" />  <DatePick id="end"/>
+          <div className='actNameType'>
+            <form className={classes.root} noValidate>
+              <FormControl className={classes.margin}>
+                <InputLabel shrink htmlFor="bootstrap-input" style={{color: '#4A006E', fontsize: '24px'}}>
+                 Activity Name
+                </InputLabel>
+                <BootstrapInput defaultValue=" " id="bootstrap-input" />
+              </FormControl>
+              <FormControl  variant="outlined" className='typeBox'>
+                <InputLabel shrink htmlFor="bootstrap-input"  style={{color: '#4A006E', fontsize: '24px', paddingLeft: '85px'}}> Activity Type</InputLabel>
+                <Select
+                    id="demo-customized-select"
+                    value={type}
+                    onChange={handleTypeChange}
+                    input={<BootstrapType defaultValue="Presentation" id="bootstrap-input"/>}
+                >
+                  <MenuItem value="">Presentation</MenuItem>
+                  <MenuItem value={10}>Lab Report</MenuItem>
+                  <MenuItem value={20}>Reading</MenuItem>
+                  <MenuItem value={30}>Case Study</MenuItem>
+                </Select>
+              </FormControl>
+            </form>
+
           </div>
-          <div>
-            <span> Content </span> <br/>
-            <TextField
-              multiline
-              id="standard-read-only-input"
-              defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus viverra adipiscing at in tellus integer feugiat scelerisque. Id ornare arcu odio ut sem nulla pharetra diam. Tincidunt ornare massa eget egestas purus viverra. Nunc lobortis mattis aliquam faucibus purus in. Condimentum lacinia quis vel eros donec ac odio tempor orci. Cras semper auctor neque vitae tempus quam pellentesque nec. Accumsan tortor posuere ac ut. Enim sit amet venenatis urna cursus eget nunc scelerisque. Egestas sed tempus urna et pharetra pharetra massa massa. Sem et tortor consequat id. Commodo sed egestas egestas fringilla phasellus faucibus scelerisque. Nullam non nisi est sit amet facilisis magna etiam tempor. Phasellus vestibulum lorem sed risus ultricies tristique. Commodo viverra maecenas accumsan lacus vel facilisis volutpat. Pulvinar etiam non quam lacus suspendisse faucibus interdum posuere. Justo donec enim diam vulputate ut pharetra sit amet. Facilisis mauris sit amet massa vitae tortor."
-              fullWidth
-              variant="outlined"
-              rows={5}
-              InputProps={{
-                readOnly: true,
-              }}/>
-          </div>
+
+
           <div>
             <span> Classroom </span><br/>
             <TextField
@@ -401,5 +487,6 @@ lineHeight: '17px', display: 'flex', alignItems: 'center', color: '#414141'}} > 
     </div>
   );
 }
+
 
 

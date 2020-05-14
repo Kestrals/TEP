@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e46d733-f705-4eeb-b58f-00c39b8f7440" name="Default Changelist" comment="" />
+    <list default="true" id="9e46d733-f705-4eeb-b58f-00c39b8f7440" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/404.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lecturer/LectSummary.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lecturer/components/summaryVTabs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lecturer/styles/mainFrameSummary.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lecturer/Lecturer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecturer/Lecturer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lecturer/components/actiTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecturer/components/actiTab.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lecturer/components/verticalTab3.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecturer/components/verticalTab3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lecturer/styles/mainFrame.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecturer/styles/mainFrame.css" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,21 +30,31 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1aoDL7JnoCxqFK2Da1m98NLWh6l" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="ignore.virus.scanning.warn.message" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Documents/GitHub" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/lecturer/styles" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
     <property name="ts.external.directory.path" value="A:\react\TEP\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="A:\react\TEP\src" />
+      <recent name="A:\react\TEP\src\lecturer" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="A:\react\TEP\src\lecturer\styles" />
+      <recent name="A:\react\TEP\src\lecturer" />
       <recent name="A:\react\student\src\lecturer\components" />
       <recent name="A:\react\student\src\lecturer" />
     </key>
@@ -95,11 +117,29 @@
       <workItem from="1588848604957" duration="11417000" />
       <workItem from="1588861991902" duration="1394000" />
       <workItem from="1588866405521" duration="11711000" />
-      <workItem from="1588927795947" duration="840000" />
+      <workItem from="1588927795947" duration="3979000" />
+      <workItem from="1588940828791" duration="8121000" />
+      <workItem from="1589196486519" duration="2267000" />
+      <workItem from="1589370265944" duration="128000" />
+      <workItem from="1589374552845" duration="7497000" />
+      <workItem from="1589459798286" duration="238000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

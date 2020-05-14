@@ -53,7 +53,13 @@
   background-color: lightblue;
 }
 
-
+.tabFrame {
+  position: absolute;
+  width: 277px;
+  height: 705px;
+  left: 101px;
+  top: 194px;
+}
 
 /*
 width: 1223px;

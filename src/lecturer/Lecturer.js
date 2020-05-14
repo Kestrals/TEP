@@ -2,7 +2,8 @@ import React ,{Component} from 'react';
 import TopMenuBar from './components/menu';
 import './styles/mainFrame.css';
 import ExpansionPanel from './components/ExpaMod.js';
-
+import {Link, Switch, Route, BrowserRouter} from 'react-router-dom';
+import SummaryPage from './LectSummary';
 class Lecturer extends Component  {
 
 
@@ -10,6 +11,9 @@ class Lecturer extends Component  {
       return (
         <div >
           <div className = 'Menubar'>
+              <Switch>
+              <Route component={SummaryPage}/>
+              </Switch>
             <TopMenuBar />
           </div>
           <div className = 'title'>
@@ -34,6 +38,7 @@ class Lecturer extends Component  {
             <div style ={{margin:'100px 0px'}}>
             <ExpansionPanel />
             </div>
+
 
           {/*
             <div className = 'optionSelectorBox'>

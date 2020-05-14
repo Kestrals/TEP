@@ -12,9 +12,12 @@ class App extends Component  {
         <ul>
           <li><a href="/student"> student </a></li>
           <li><a href="/lecturer"> lecturer </a></li>
+            <li><a href="/lectSummary"> lecturer Summary </a></li>
           <li>Coordinator</li>
         </ul>
         </div>
+
+
       );
     }
 
